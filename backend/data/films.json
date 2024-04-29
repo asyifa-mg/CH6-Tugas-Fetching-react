@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Brave",
+    "image": {
+      "src": "brave.jpeg",
+      "alt": "Poster of Laskar Pelangi"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Moana (2016)",
+    "image": {
+      "src": "moana.jpeg",
+      "alt": "Poster of Ada Apa dengan Cinta?"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Tangled (2010)",
+    "image": {
+      "src": "tangled.jpeg",
+      "alt": "Poster of Pengabdi Setan"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Monsters, INC",
+    "image": {
+      "src": "monster.jpg",
+      "alt": "Poster of Marlina Si Pembunuh dalam Empat Babak"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Up (2009)",
+    "image": {
+      "src": "up.jpg",
+      "alt": "Poster of Filosofi Kopi"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Coco",
+    "image": {
+      "src": "coco.jpeg",
+      "alt": "Poster of Dilan 1990"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Frozen (2013)",
+    "image": {
+      "src": "frozen.jpg",
+      "alt": "Poster of Gundala"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Finding Nemo (2003)",
+    "image": {
+      "src": "nemo.jpg",
+      "alt": "Poster of Susah Sinyal"
+    }
+  },
+  {
+    "id": 9,
+    "title": "Ratatouille (2007)",
+    "image": {
+      "src": "R.jpg",
+      "alt": "Poster of Bebas"
+    }
+  },
+  {
+    "id": 10,
+    "title": "Ralph Breaks The Internet (2018)",
+    "image": {
+      "src": "ralph.jpg",
+      "alt": "Poster of Aruna & Lidahnya"
+    }
+  }
+]
