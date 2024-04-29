@@ -1,5 +1,5 @@
 export async function updateFilms(films) {
-  const response = await fetch("http://localhost:5000/add-listFilms", {
+  const response = await fetch("http://localhost:3000/user-places", {
     method: "PUT",
     body: JSON.stringify({ films }),
     headers: {
@@ -10,7 +10,7 @@ export async function updateFilms(films) {
   const resData = await response.json();
 
   if (!response.ok) {
-    throw new Error("Failed to update user data");
+    throw new Error("Failed to update films data");
   }
 
   return resData.message;

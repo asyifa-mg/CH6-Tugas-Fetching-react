@@ -4,7 +4,7 @@ import Error from "./Error.jsx";
 
 export default function ListFilms({ onSelectFilm }) {
   const [isFetching, setIsFetching] = useState(false);
-  const [listFilms, setListFilms] = useState([]);
+  const [listFilms, setListFilm] = useState([]);
   const [error, setError] = useState();
 
   useEffect(() => {
@@ -12,14 +12,15 @@ export default function ListFilms({ onSelectFilm }) {
       setIsFetching(true);
 
       try {
-        const response = await fetch("http://localhost:5000/films");
+        const response = await fetch("http://localhost:3000/films");
         const resData = await response.json();
 
+        // logic jika ada error dari hit api backend
         if (!response.ok) {
-          throw new Error("Failed to Fetch Data");
+          throw new Error("Failed to fetch data");
         }
 
-        setListFilms(resData.films);
+        setListFilm(resData.films);
       } catch (error) {
         setError({
           message:
@@ -38,11 +39,11 @@ export default function ListFilms({ onSelectFilm }) {
 
   return (
     <Films
-      title="List Films"
+      title="Available Places"
       films={listFilms}
       isLoading={isFetching}
       loadingText="Data is fetching. . ."
-      fallbackText="No films list."
+      fallbackText="No places available."
       onSelectFilm={onSelectFilm}
     />
   );

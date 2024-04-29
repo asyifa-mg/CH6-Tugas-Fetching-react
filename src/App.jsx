@@ -2,95 +2,95 @@ import { useRef, useState, useCallback } from "react";
 
 import Films from "./components/Films.jsx";
 import Modal from "./components/Modal.jsx";
-import Delete from "./components/Delete.jsx";
-import logo from "./assets/logoweb.png";
+import DeleteData from "./components/Delete.jsx";
+import logoImg from "./assets/logoweb.png";
 import ListFilms from "./components/ListFilms.jsx";
 import { updateFilms } from "./http.js";
 import Error from "./components/Error.jsx";
 
 function App() {
-  const selectedListFilm = useRef();
+  const selectedFilm = useRef();
 
-  const [listFilms, setListFilms] = useState([]);
-  const [errorUpdatingListFilms, setErrorUpdatingListFilms] = useState();
+  const [listFilms, setlistFilms] = useState([]);
+  const [errorUpdatinglistFilms, setErrorUpdatinglistFilms] = useState();
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  function handleStartRemoveListFilms(film) {
+  function handleStartRemoveFilm(film) {
     setModalIsOpen(true);
-    selectedListFilm.current = film;
+    selectedFilm.current = film;
   }
 
-  function handleStopRemoveListFilms() {
+  function handleStopRemoveFilm() {
     setModalIsOpen(false);
   }
 
-  async function handleSelectFilm(selectedListFilm) {
-    setListFilms((prevFilms) => {
-      if (!prevFilms) {
-        prevFilms = [];
+  async function handleSelectFilm(selectedFilm) {
+    setlistFilms((prevPickedFilms) => {
+      if (!prevPickedFilms) {
+        prevPickedFilms = [];
       }
-      if (prevFilms.some((film) => film.id === selectedListFilm.id)) {
-        return prevFilms;
+      if (prevPickedFilms.some((film) => film.id === selectedFilm.id)) {
+        return prevPickedFilms;
       }
-      return [selectedListFilm, ...prevFilms];
+      return [selectedFilm, ...prevPickedFilms];
     });
 
     try {
-      await updateFilms([...listFilms, selectedListFilm]);
+      await updateFilms([...listFilms, selectedFilm]);
     } catch (err) {
-      setListFilms(listFilms);
-      setErrorUpdatingListFilms({
-        message: err.message || "ada error waktu update list film",
+      setlistFilms(listFilms);
+      setErrorUpdatinglistFilms({
+        message: err.message || "ada error waktu update user places",
       });
     }
   }
 
   const handleRemoveFilm = useCallback(async function handleRemoveFilm() {
-    setListFilms((prevFilms) =>
-      prevFilms.filter((film) => film.id !== selectedListFilm.current.id)
+    setlistFilms((prevPickedFilms) =>
+      prevPickedFilms.filter((film) => film.id !== selectedFilm.current.id)
     );
 
     setModalIsOpen(false);
   }, []);
 
   function handleError() {
-    setErrorUpdatingListFilms(null);
+    setErrorUpdatinglistFilms(null);
   }
 
   return (
     <>
-      <Modal open={errorUpdatingListFilms} onClose={handleError}>
-        {errorUpdatingListFilms && (
+      <Modal open={errorUpdatinglistFilms} onClose={handleError}>
+        {errorUpdatinglistFilms && (
           <Error
-            title="Ada error pas update user places"
-            message={errorUpdatingListFilms.message}
+            title="Ada error pas update user films"
+            message={errorUpdatinglistFilms.message}
             onConfirm={handleError}
           />
         )}
       </Modal>
 
-      <Modal open={modalIsOpen} onClose={handleStopRemoveListFilms}>
-        <DeleteConfirmation
-          onCancel={handleStopRemoveListFilms}
+      <Modal open={modalIsOpen} onClose={handleStopRemoveFilm}>
+        <DeleteData
+          onCancel={handleStopRemoveFilm}
           onConfirm={handleRemoveFilm}
         />
       </Modal>
 
       <header>
-        <img src={logo} alt="Stylized globe" />
-        <h1>PlacePicker</h1>
+        <img src={logoImg} alt="Stylized globe" />
+        <h1>FilmPicker</h1>
         <p>
-          Create your personal collection of places you would like to visit or
+          Create your personal collection of films you would like to visit or
           you have visited.
         </p>
       </header>
       <main>
         <Films
           title="I'd like to visit ..."
-          fallbackText="Select the places you would like to visit below."
+          fallbackText="Select the films you would like to visit below."
           films={listFilms}
-          onSelectFilm={handleStartRemoveListFilms}
+          onSelectFilm={handleStartRemoveFilm}
         />
 
         <ListFilms onSelectFilm={handleSelectFilm} />

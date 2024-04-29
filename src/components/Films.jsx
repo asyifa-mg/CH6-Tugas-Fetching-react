@@ -22,7 +22,7 @@ export default function Films({
             <li key={film.id} className="place-item">
               <button onClick={() => onSelectFilm(film)}>
                 <img
-                  src={`http://localhost:5000/${film.image.src}`}
+                  src={`http://localhost:3000/${film.image.src}`}
                   alt={film.image.alt}
                 />
                 <h3>{film.title}</h3>
