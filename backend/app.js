@@ -25,20 +25,20 @@ app.get("/films", async (req, res) => {
   res.status(200).json({ films: filmsData });
 });
 
-app.get("/user-places", async (req, res) => {
-  const fileContent = await fs.readFile("./data/user-places.json");
+app.get("/list-films", async (req, res) => {
+  const fileContent = await fs.readFile("./data/list-films.json");
 
   const films = JSON.parse(fileContent);
 
   res.status(200).json({ films });
 });
 
-app.put("/user-places", async (req, res) => {
+app.put("/list-films", async (req, res) => {
   const films = req.body.films;
 
-  await fs.writeFile("./data/user-places.json", JSON.stringify(films));
+  await fs.writeFile("./data/list-films.json", JSON.stringify(films));
 
-  res.status(200).json({ message: "Lis Fim Updated!" });
+  res.status(200).json({ message: "List Film Updated!" });
 });
 
 // 404
