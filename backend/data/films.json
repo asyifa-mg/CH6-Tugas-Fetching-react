@@ -4,7 +4,7 @@
     "title": "Brave",
     "image": {
       "src": "brave.jpeg",
-      "alt": "Poster of Laskar Pelangi"
+      "alt": "Poster of Brave"
     }
   },
   {
@@ -12,7 +12,7 @@
     "title": "Moana (2016)",
     "image": {
       "src": "moana.jpeg",
-      "alt": "Poster of Ada Apa dengan Cinta?"
+      "alt": "Poster of Moana"
     }
   },
   {
@@ -20,7 +20,7 @@
     "title": "Tangled (2010)",
     "image": {
       "src": "tangled.jpeg",
-      "alt": "Poster of Pengabdi Setan"
+      "alt": "Poster of Tangled"
     }
   },
   {
@@ -28,7 +28,7 @@
     "title": "Monsters, INC",
     "image": {
       "src": "monster.jpg",
-      "alt": "Poster of Marlina Si Pembunuh dalam Empat Babak"
+      "alt": "Poster of Monsters, INC"
     }
   },
   {
@@ -36,7 +36,7 @@
     "title": "Up (2009)",
     "image": {
       "src": "up.jpg",
-      "alt": "Poster of Filosofi Kopi"
+      "alt": "Poster of Up"
     }
   },
   {
@@ -44,7 +44,7 @@
     "title": "Coco",
     "image": {
       "src": "coco.jpeg",
-      "alt": "Poster of Dilan 1990"
+      "alt": "Poster of Coco"
     }
   },
   {
@@ -52,7 +52,7 @@
     "title": "Frozen (2013)",
     "image": {
       "src": "frozen.jpg",
-      "alt": "Poster of Gundala"
+      "alt": "Poster of Frozen"
     }
   },
   {
@@ -60,7 +60,7 @@
     "title": "Finding Nemo (2003)",
     "image": {
       "src": "nemo.jpg",
-      "alt": "Poster of Susah Sinyal"
+      "alt": "Poster of Finding Nemo"
     }
   },
   {
@@ -68,7 +68,7 @@
     "title": "Ratatouille (2007)",
     "image": {
       "src": "R.jpg",
-      "alt": "Poster of Bebas"
+      "alt": "Poster of Ratatouille"
     }
   },
   {
@@ -76,7 +76,7 @@
     "title": "Ralph Breaks The Internet (2018)",
     "image": {
       "src": "ralph.jpg",
-      "alt": "Poster of Aruna & Lidahnya"
+      "alt": "Poster of Ralph Breaks The Internet "
     }
   }
 ]
